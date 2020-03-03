@@ -16,11 +16,6 @@ function promptUser() {
     },
     {
       type: "input",
-      name: "hobby",
-      message: "What is your favorite hobby?"
-    },
-    {
-      type: "input",
       name: "email",
       message: "What is your Email?"
     },
@@ -44,6 +39,11 @@ function promptUser() {
        name: "desc",
        message: "Describe your project!"
      },
+     {
+       type: "input",
+       name: "usage",
+       message: "What is your project used for?"
+     }
 
   ]);
 }
@@ -61,7 +61,7 @@ function generateHTML(answers) {
   <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Hi! My name is ${answers.name}</h1>
-    <p class="lead">I am from ${answers.location}.</p>
+    <h2 class="lead">I am from ${answers.location}.</h2>
     <h3> <span class="badge badge-secondary">Contact Me</span></h3>
     <ul class="list-group">
       <li class="list-group-item">Email: ${answers.email}</li> 
@@ -72,7 +72,9 @@ function generateHTML(answers) {
     <ul class="list-group">
      <li class="list-group-item">Project name: ${answers.project}</li>
      <li class="list-group-item">Description: ${answers.desc}</li>
+     <li class="list-group-item">Usage: ${answers.usage}</li>
     </ul>
+
   </div>
 </div>
 </body>
@@ -89,3 +91,6 @@ promptUser()
   .catch(function(err) {
     console.log(err);
   });
+
+  
+ 
